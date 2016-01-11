@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F5EB">
+
+    <include android:id="@+id/toolbar_actionbar" layout="@layout/toolbar_default"
+        android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    <android.support.v4.widget.DrawerLayout android:id="@+id/drawer"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_actionbar">
+
+        <FrameLayout android:id="@+id/container" android:layout_width="match_parent"
+            android:clickable="true" android:layout_height="match_parent" >
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_gravity="center"
+                android:id="@+id/linearLayout">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/etAmount"
+                        android:singleLine="true"
+                        android:hint="Amount"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_passcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:id="@+id/etPassword"
+                        android:singleLine="true"
+                        android:hint="Passcode"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_prupose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="60dp"
+                        android:id="@+id/etPurpose"
+                        android:singleLine="true"
+                        android:hint="Purpose (optional)"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:text="Submit"
+                    android:background="#B3CCCC"
+                    android:layout_marginTop="40dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/btnSubmit" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center|top">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|top"
+                    android:textColor="#E60B21"
+                    android:text=""
+                    android:id="@+id/textView" />
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+        <!-- android:layout_marginTop="?android:attr/actionBarSize"-->
+        <fragment android:id="@+id/fragment_drawer"
+            android:name="com.appbasket.project.retailnfc.NavigationDrawerFragment"
+            android:layout_width="@dimen/navigation_drawer_width"
+            android:layout_height="match_parent" android:layout_gravity="start"
+            app:layout="@layout/fragment_navigation_drawer" />
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+
+
+
+</RelativeLayout>
